@@ -26,4 +26,5 @@ public class UserServiceImp implements UserService {
       return userDao.listUsers();
    }
 
+// 5. В сервис добавьте метод, который с помощью hql-запроса будет доставать юзера, владеющего машиной по ее модели и серии.
 }
