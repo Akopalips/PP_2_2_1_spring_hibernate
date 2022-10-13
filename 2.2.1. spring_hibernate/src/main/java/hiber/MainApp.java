@@ -19,7 +19,6 @@ public class MainApp {
       userService.add(new User("User2", "Lastname2", "user2@mail.ru", new Car("Mercedes", 2)));
       userService.add(new User("User3", "Lastname3", "user3@mail.ru", new Car("Honda", 2)));
       userService.add(new User("User4", "Lastname4", "user4@mail.ru", new Car("Subaru", 666)));
-      
 
       List<User> users = userService.listUsers();
       for (User user : users) {
@@ -30,7 +29,9 @@ public class MainApp {
          System.out.println("Car :"+user.getCar());
          System.out.println();
       }
-
+      
+      System.out.println("Вывести пользователя с маркой GAZ серии 1:");
+      System.out.println(userService.getUserByCarFields("GAZ", 1));
       context.close();
    }
 }
@@ -39,7 +40,3 @@ public class MainApp {
 // 2. Создайте сущность Car с полями String model и int series, на которую будет ссылаться User с помощью связи one-to-one.
 // 3. Добавьте этот класс в настройки hibernate.
 // 4. Создайте несколько пользователей с машинами, добавьте их в базу данных, вытащите обратно.
-
-//
-
-// 5. В сервис добавьте метод, который с помощью hql-запроса будет доставать юзера, владеющего машиной по ее модели и серии.
